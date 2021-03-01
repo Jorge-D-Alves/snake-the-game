@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    
+</head>
+<body>
+    <header>
+    <h1 class="piscante">Snake Game</h1>
+    
+    <canvas id="snake" width="512" height="512">
+    </canvas>
+    </header>
+    <button type="button" class="btn" onclick="setInterval(iniciarJogo, 200)">PLAY!</button>
+  
+    <footer>
+        <h3 class="frase"> Releitura do classico Snake lançado originalmente em 1970 e estava disponível para os primeiros computadores pessoais. Nos anos 2000 se tornou mundialmente popular ao integrar a sessão de games dos celulares da Nokia.</h3></footer>
+</body>
+<script>
+
+function typeWhite(elemento){
+        const textoArray = elemento.innerHTML.split('');
+        elemento.innerHTML = ''
+        textoArray.forEach((letra, i) => {
+            setTimeout(() => elemento.innerHTML += letra, 75 * i)            
+        });
+    }
+    const titulo = document.querySelector('.frase')
+    typeWhite(titulo);
+</script>
+</html>
